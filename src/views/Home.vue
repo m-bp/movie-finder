@@ -6,28 +6,21 @@
     >
       {{ error }}
     </div>
-    <form @submit.prevent="search()">
-      <input
-        v-model="query"
-        placeholder="Search..."
-        type="text"
-        autofocus
-      >
-      <input
-        type="submit"
-        value="Search"
-        :disabled="!query"
-      >
-    </form>
+    <search-form
+      @submit="search()"
+      v-model="query"
+    />
   </div>
 </template>
 
 <script>
+import SearchForm from '@/components/SearchForm';
 import movieService from '@/services/movieService';
 
 export default {
   name: 'Home',
   components: {
+    SearchForm
   },
   data () {
     return {
