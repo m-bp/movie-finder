@@ -16,24 +16,9 @@
       <input
         type="submit"
         value="Search"
+        :disabled="!query"
       >
     </form>
-    <div>
-      <div
-        v-for="result in results"
-        :key="result.imdbID"
-      >
-        <p>{{ result.Title }}</p>
-        <img
-          :src="result.Poster"
-          :alt="'Poster for ' + result.Title"
-        />
-        <p>{{ result.Director }}</p>
-        <p>{{ result.Year }}</p>
-        <pre>{{ result }}</pre>
-        <hr>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -48,7 +33,6 @@ export default {
     return {
       query: '',
       error: '',
-      results: [],
     }
   },
   methods: {
@@ -57,7 +41,9 @@ export default {
         console.log(data);
 
         if (data.Response === "True") {
-          this.results = data.Search;
+          this.$store.commit('setQuery', this.query);
+          this.$store.commit('setResults', data.Search);
+          this.$router.push({ name: 'Results' })
         }
         else {
           this.error = data.Error;
