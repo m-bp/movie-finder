@@ -1,14 +1,5 @@
 # movie-finder
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+View the app online here: https://movie-finder-swart.vercel.app/
 
 # Assignment
 Create a website called MovieFinder meeting the following requirements:
@@ -24,3 +15,9 @@ You can use The Open Movie Database’s API (https://www.omdbapi.com/) to fetch 
 
 # Note
 I did not include the Director of the movie because the search API for OMDB does not include it in its data and I would have to make a separate request by imdbID to get any more information. I could have done this but chose not to for the sake of time.
+
+# To run the project locally
+```
+yarn install
+yarn serve
+```
