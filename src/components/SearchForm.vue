@@ -5,7 +5,7 @@
       class="search-form"
     >
       <input
-        :value="query"
+        :value="value"
         @input="updateQuery"
         placeholder="Search for a movie..."
         type="text"
@@ -29,6 +29,7 @@ export default {
     return { query: '' }
   },
   props: {
+    value: String
   },
   methods: {
     updateQuery (event) {
