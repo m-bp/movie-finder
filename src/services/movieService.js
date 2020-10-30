@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API_KEY = process.env.VUE_APP_OMDB_API_KEY;
-const BASE_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&`;
+const BASE_URL = `https://www.omdbapi.com/?apikey=${API_KEY}&`;
 
 console.log('Base URL:', BASE_URL);
 
