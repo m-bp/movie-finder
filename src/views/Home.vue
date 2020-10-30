@@ -1,26 +1,23 @@
 <template>
   <div class="home">
-    <div
-      v-if="error"
-      class="error"
-    >
-      {{ error }}
-    </div>
     <search-form
       @submit="search()"
       v-model="query"
     />
+    <error-message :error="error" />
   </div>
 </template>
 
 <script>
 import SearchForm from '@/components/SearchForm';
+import ErrorMessage from '@/components/ErrorMessage';
 import movieService from '@/services/movieService';
 
 export default {
   name: 'Home',
   components: {
-    SearchForm
+    SearchForm,
+    ErrorMessage
   },
   data () {
     return {
