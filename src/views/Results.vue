@@ -3,18 +3,18 @@
     <h1>Showing top results for '{{ $store.state.query }}'</h1>
 
     <div class="slider-container">
-      <movie-list :movies="$store.state.results" />
+      <movie-slider :movies="$store.state.results" />
     </div>
   </div>
 </template>
 
 <script>
-import MovieList from '@/components/MovieList';
+import MovieSlider from '@/components/MovieSlider';
 
 export default {
   name: 'Home',
   components: {
-    MovieList
+    MovieSlider
   },
   created () {
     if (!this.$store.state.results) {
