@@ -33,8 +33,6 @@ export default {
       const query = this.query;
 
       movieService.search(query).then((data) => {
-        console.log(data);
-
         if (data.Response === "True") {
           this.$store.commit('setQuery', query);
           this.$store.commit('setResults', data.Search);
