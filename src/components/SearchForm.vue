@@ -7,7 +7,7 @@
       <input
         :value="query"
         @input="updateQuery"
-        placeholder="Search..."
+        placeholder="Search for a movie..."
         type="text"
         autofocus
         class="search-form__input"
