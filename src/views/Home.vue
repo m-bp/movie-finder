@@ -30,11 +30,13 @@ export default {
   },
   methods: {
     search () {
-      movieService.search(this.query).then((data) => {
+      const query = this.query;
+
+      movieService.search(query).then((data) => {
         console.log(data);
 
         if (data.Response === "True") {
-          this.$store.commit('setQuery', this.query);
+          this.$store.commit('setQuery', query);
           this.$store.commit('setResults', data.Search);
           this.$router.push({ name: 'Results' })
         }
