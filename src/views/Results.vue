@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <span>Results go here</span>
-    <movie-list :movies="$store.state.results" />
+  <div class="results">
+    <h1>Showing top results for '{{ $store.state.query }}'</h1>
+
+    <div class="slider-container">
+      <movie-list :movies="$store.state.results" />
+    </div>
   </div>
 </template>
 
@@ -20,3 +23,17 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.results {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-container {
+  width: 100%;
+}
+</style>
